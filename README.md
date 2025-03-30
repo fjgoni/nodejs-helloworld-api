@@ -36,5 +36,10 @@ Este proyecto tiene como objetivo configurar un webhook en un repositorio de Git
   ```bash
   ngrok http 8080
 
-### 4. Hacer push / pull
+### 4. Configurar Pipeline en Jenkins
+
+ - Crear un pipeline y configurarlo con Git SCM a este repositorio
+ - Seleccionar dentro de la configuración el trigger: GitHub hook trigger for GITScm polling
+
+### 5. Hacer push / pull
 
