@@ -35,3 +35,6 @@ Este proyecto tiene como objetivo configurar un webhook en un repositorio de Git
 
   ```bash
   ngrok http 8080
+
+### 4. Hacer push / pull
+
