@@ -1,31 +1,37 @@
-# NodeJs, helloworld API for test propouses.
+# Desafío 2 - Jenkins Webhook y Node.js API
 
-This is a simple API that returns a welcome message.
+## Descripción
 
-## Run your local environment
+Este proyecto tiene como objetivo configurar un webhook en un repositorio de GitHub y crear un pipeline en Jenkins para automatizar el proceso de build y testing de una API en Node.js.
 
-### Clone the repository
-```bash
-git clone https://github.com/yosoyfunes/nodejs-helloworld-api.git
-```
+## Requisitos
 
-### Install dependencies
-```bash
-npm install
-```
+- Cuenta en GitHub.
+- Jenkins instalado y configurado.
+- Ngrok para exponer Jenkins públicamente.
+- Node.js y NPM instalados.
+- Proyecto de ejemplo: `nodejs-helloworld-api`.
 
-### Run the tests
-```bash
-npm test
-```
+## Configuración
 
-### Start the server
-```bash
-npm start
-```
+### 1. Forkear el Repositorio
 
-### Make a request
-```bash
-curl http://localhost:3000
-```
-# test job
+- Ir al repositorio original: [nodejs-helloworld-api](https://github.com/).
+- Hacer un fork a tu cuenta de GitHub.
+
+### 2. Configurar Webhook en GitHub
+
+- Ir a `Settings` → `Webhooks` en tu fork.
+- Crear un nuevo webhook:
+  - **Payload URL**: `http://<tu-ngrok-url>/github-webhook/`
+  - **Content Type**: `application/json`
+  - **Eventos**: Seleccionar "Push" y "Pull request".
+- Guardar los cambios.
+
+### 3. Exponer Jenkins con Ngrok
+
+- Descargar e instalar ngrok desde [ngrok.com](https://ngrok.com/).
+- Abrir una terminal y ejecutar:
+
+  ```bash
+  ngrok http 8080
